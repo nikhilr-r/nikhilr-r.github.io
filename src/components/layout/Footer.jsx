@@ -13,7 +13,7 @@ export default function Footer() {
       </p>
 
       <a 
-        href="mailto:you@example.com" 
+        href="mailto:rajputnikhil1906@gmail.com" 
         className="inline-flex items-center justify-center px-8 py-3 text-sm font-medium text-black bg-white rounded-full hover:bg-zinc-200 transition-colors"
       >
         Start a Conversation

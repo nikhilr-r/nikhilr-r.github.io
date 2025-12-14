@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   color-scheme: dark;
 }
@@ -14,6 +15,7 @@ body {
   /* THE SECRET SAUCE: Tight text and smooth fonts */
   letter-spacing: -0.025em; 
   -webkit-font-smoothing: antialiased;
+  
 }
 /* Make the scrollbar look premium */
 ::-webkit-scrollbar {
@@ -28,4 +30,12 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+}
+
+.bg-dots {
+  background-size: 20px 20px;
 }

@@ -8,6 +8,7 @@ import Hero from "../components/layout/Hero"; // <--- Import New Hero
 import TechStack from "../components/layout/TechStack"; 
 import { SectionDivider } from "../components/ui/GridPattern";
 
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-text overflow-hidden selection:bg-zinc-800 selection:text-white">
