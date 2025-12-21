@@ -1,0 +1,85 @@
+/* Pixel Logo Navbar Version (Small) */
+.pixel-logo-nav {
+  display: block;
+  transform: scale(0.65);   /* 👈 yahin magic */
+  transform-origin: left center;
+}
+
+/* Mobile pe aur chhota */
+@media (max-width: 768px) {
+  .pixel-logo-nav {
+    transform: scale(0.55);
+  }
+}
+
+.logo-container-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.letter-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1.5px;
+}
+
+.pixel-nav {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 0.5px;
+}
+
+.empty-nav {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+/* Letter grid */
+.letter {
+  display: grid;
+  grid-template-columns: repeat(5, 14px);
+  grid-template-rows: repeat(7, 14px);
+  gap: 2px;
+}
+
+/* Pixel */
+.pixel {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+}
+
+.empty {
+  background: transparent;
+}
+.pixel {
+  box-shadow: 0 0 6px rgba(255,255,255,0.35);
+}
+
+@media (max-width: 640px) {
+  .letter {
+    grid-template-columns: repeat(5, 12px);
+    grid-template-rows: repeat(7, 12px);
+  }
+
+  .pixel {
+    width: 12px;
+    height: 12px;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .letter {
+    grid-template-columns: repeat(5, 15px);
+    grid-template-rows: repeat(7, 15px);
+  }
+
+  .pixel {
+    width: 15px;
+    height: 15px;
+  }
+}

@@ -6,12 +6,17 @@ import {
   User,
   Terminal,
   Cpu,
-  Globe
+  Globe,
+  FileText
 } from "lucide-react";
+
 import { PORTFOLIO_DATA } from "../../data/portfolio";
+import ResumeViewer from "../ui/ResumeViewer";
+import "./Hero.css";
 
 export default function Hero() {
   const [time, setTime] = useState("");
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   // Live Clock
   useEffect(() => {
@@ -30,123 +35,134 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key.toLowerCase() === "r") {
+        setResumeOpen(true);
+      }
+      if (e.key === "Escape") {
+        setResumeOpen(false);
+      }
+    };
+  
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
-    <section className="pt-32 pb-16 border-b border-zinc-800/50 bg-zinc-900/20">
-      <div className="max-w-3xl mx-auto px-6">
+    <>
+      <section
+        id="home"
+        className="pt-20 md:pt-24 pb-20 border-b border-zinc-800/50"
+      >
+        <div className="max-w-4xl mx-auto px-6">
 
-        {/* 1. PIXEL LOGO */}
-        <div className="flex justify-center mb-16">
-          <div className="grid grid-cols-2 gap-1 w-24 h-24 opacity-90">
-            <div className="bg-white rounded-sm" />
-            <div className="bg-zinc-800 rounded-sm" />
-            <div className="bg-zinc-800 rounded-sm" />
-            <div className="bg-white rounded-sm" />
-          </div>
-        </div>
-
-        {/* 2. PROFILE HEADER */}
-        <div className="flex items-center gap-6 mb-12">
-
-          {/* Avatar */}
-          <div className="relative">
-            <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-zinc-700">
-              <img
-                src="/nikhil.jpg"   // ✅ HIGH QUALITY IMAGE (500x500+)
-                alt="Nikhil Rajput"
-                className="
-                  w-full h-full
-                  object-cover object-center
-                  contrast-105 brightness-105
-                "
-                loading="eager"
-                draggable="false"
-              />
+          {/* PROFILE HEADER */}
+          <div className="flex items-center gap-6 mb-16">
+            {/* Avatar */}
+            <div className="relative shrink-0">
+              <div className="w-20 h-20 rounded-full overflow-hidden border border-zinc-800">
+                <img
+                  src="/nikh2.jpg"
+                  alt="Nikhil Rajput"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  draggable="false"
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-black rounded-full" />
             </div>
 
-            {/* Online Status */}
-            <div className="absolute bottom-1 right-1 w-4 h-4 bg-green-500 border-2 border-black rounded-full" />
+            {/* Name & Title */}
+            <div>
+              <h1 className="text-3xl font-bold text-white tracking-tight flex items-center gap-2.5 mb-1">
+                {PORTFOLIO_DATA.name}
+                <span className="text-blue-500" title="Verified">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path d="M23,12L20.56,9.22L20.9,5.54L17.29,4.72L15.4,1.54L12,3L8.6,1.54L6.71,4.72L3.1,5.53L3.44,9.21L1,12L3.44,14.78L3.1,18.47L6.71,19.29L8.6,22.47L12,21L15.4,22.46L17.29,19.28L20.9,18.46L20.56,14.78L23,12M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z" />
+                  </svg>
+                </span>
+              </h1>
+              <p className="text-base text-zinc-400">
+                Software Developer | AI Engineer
+              </p>
+            </div>
           </div>
 
-          {/* Name & Title */}
-          <div>
-            <h1 className="text-4xl font-bold text-white tracking-tight flex items-center gap-2">
-              {PORTFOLIO_DATA.name}
+          {/* INFO GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4 border-t border-zinc-800/50 pt-8">
 
-              {/* Verified Badge */}
-              <span className="text-blue-500" title="Verified">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-6 h-6"
+            {/* Left */}
+            <div className="space-y-4">
+              <div className="flex gap-3 text-sm text-zinc-400">
+                <Terminal size={14} className="text-zinc-600" />
+                <span>
+                  CSE (AI) Student @ <span className="text-zinc-200">VIT Pune</span>
+                </span>
+              </div>
+
+              <div className="flex gap-3 text-sm text-zinc-400">
+                <Cpu size={14} className="text-zinc-600" />
+                <span>Concept → Code → Impact</span>
+              </div>
+
+              <div className="flex gap-3 text-sm text-zinc-400">
+                <MapPin size={14} className="text-zinc-600" />
+                <span>Pune, India</span>
+              </div>
+
+              <div className="flex gap-3 text-sm text-zinc-400">
+                <Globe size={14} className="text-zinc-600" />
+                <span>nik.dev.com</span>
+              </div>
+            </div>
+
+            {/* Right */}
+            <div className="space-y-4">
+              <div className="flex gap-3 text-sm text-zinc-400">
+                <Clock size={14} className="text-zinc-600" />
+                <span>
+                  {time} <span className="text-zinc-600">// Local Time</span>
+                </span>
+              </div>
+
+              <div className="flex gap-3 text-sm text-zinc-400">
+                <Mail size={14} className="text-zinc-600" />
+                <a
+                  href="mailto:rajputnikhil1906@gmail.com"
+                  className="hover:text-white transition-colors"
                 >
-                  <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .495.083.965.238 1.4-1.272.65-2.147 2.02-2.147 3.6 0 1.435.71 2.79 1.77 3.75-.12.54-.183 1.05-.183 1.666 0 2.21 1.71 3.998 3.818 3.998.47 0 .92-.084 1.336-.25.62 1.333 1.926 2.25 3.437 2.25s2.817-.917 3.437-2.25c.415.165.866.25 1.336.25 2.11 0 3.818-1.79 3.818-4 0-.616-.063-1.127-.183-1.666 1.06-.96 1.77-2.315 1.77-3.75z" />
-                </svg>
-              </span>
-            </h1>
+                  rajputnikhil1906@gmail.com
+                </a>
+              </div>
 
-            <p className="text-lg text-zinc-400 font-medium mt-1">
-              Software Developer | AI Engineer
-            </p>
+              <div className="flex gap-3 text-sm text-zinc-400">
+                <User size={14} className="text-zinc-600" />
+                <span>he / him</span>
+              </div>
+
+              {/* ✅ Resume (same tab modal) */}
+              <div className="flex items-start gap-3 text-sm text-zinc-400">
+  <FileText size={14} className="text-zinc-600 mt-0.5 shrink-0" />
+  <button
+    onClick={() => setResumeOpen(true)}
+    className="hover:text-white underline underline-offset-4 transition-colors"
+  >
+    Resume
+  </button>
+</div>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* 3. INFO GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 border-t border-zinc-800 pt-8 font-mono text-sm text-zinc-400">
+      {/* 🔥 Resume Modal */}
+      <ResumeViewer open={resumeOpen} onClose={() => setResumeOpen(false)} />
 
-          {/* Left */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <Terminal size={16} className="text-zinc-600" />
-              <span>
-                CSE (AI) Student @ <span className="text-zinc-200">VIT Pune</span>
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Cpu size={16} className="text-zinc-600" />
-              <span>Concept → Code → Impact</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <MapPin size={16} className="text-zinc-600" />
-              <span>Pune, India</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Globe size={16} className="text-zinc-600" />
-              <a href="#" className="hover:text-white transition-colors">
-                yourwebsite.com
-              </a>
-            </div>
-          </div>
-
-          {/* Right */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <Clock size={16} className="text-zinc-600" />
-              <span>
-                {time} <span className="text-zinc-600">// Local Time</span>
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Mail size={16} className="text-zinc-600" />
-              <a
-                href="mailto:rajputnikhil1906@gmail.com"
-                className="hover:text-white transition-colors"
-              >
-                rajputnikhil1906@gmail.com
-              </a>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <User size={16} className="text-zinc-600" />
-              <span>he / him</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    </>
   );
 }

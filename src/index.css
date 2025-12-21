@@ -6,23 +6,28 @@
 :root {
   color-scheme: dark;
 }
+section {
+  scroll-margin-top: 80px;
+}html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 
 body {
   margin: 0;
-  background-color: #09090b;
+  background-color: #000000;
   color: #fafafa;
-  font-family: 'Inter', system-ui, sans-serif;
-  /* THE SECRET SAUCE: Tight text and smooth fonts */
-  letter-spacing: -0.025em; 
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em; 
   -webkit-font-smoothing: antialiased;
-  
+  -moz-osx-font-smoothing: grayscale;
 }
 /* Make the scrollbar look premium */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: #27272a;
