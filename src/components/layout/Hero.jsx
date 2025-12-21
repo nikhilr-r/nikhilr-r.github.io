@@ -116,9 +116,16 @@ export default function Hero() {
               </div>
 
               <div className="flex gap-3 text-sm text-zinc-400">
-                <Globe size={14} className="text-zinc-600" />
-                <span>nik.dev.com</span>
-              </div>
+  <Globe size={14} className="text-zinc-600" />
+  <a
+    href="https://nikhilr-r.github.io/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-white underline underline-offset-4 transition-colors"
+  >
+    nikhilr-r.github.io
+  </a>
+</div>
             </div>
 
             {/* Right */}
