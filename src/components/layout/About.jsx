@@ -18,7 +18,7 @@ const AboutItem = ({ children, index }) => (
 export default function About() {
   const aboutItems = [
     <>
-      I’m a pre-final year <span className="text-zinc-200 font-medium">CSE (AI) student</span> with a strong foundation in <span className="text-zinc-200 font-medium">Data Structures, Algorithms, and OOP</span>. I focus on building reliable, scalable software systems.
+      I’m a Final Year <span className="text-zinc-200 font-medium">CSE (AI) student</span> with a strong foundation in <span className="text-zinc-200 font-medium">Data Structures, Algorithms, and OOP</span>. I focus on building reliable, scalable software systems.
     </>,
     <>
       With hands-on experience in <span className="text-zinc-200 font-medium">Full-Stack (MERN)</span> and <span className="text-zinc-200 font-medium">Spring Boot</span>, I enjoy designing APIs and connecting backend services with clean interfaces. My passion lies in <span className="text-zinc-200 font-medium">backend architecture</span> and building production-ready code.

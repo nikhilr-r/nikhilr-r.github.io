@@ -46,16 +46,34 @@ export const PORTFOLIO_DATA = {
   // 5. PROJECTS (List-based layout)
   projects: [
     {
-      title: "Insight - Personalized News Aggregator",
-      description: "Insight is a distraction-free, personalized news briefing platform built using the MERN Stack .Unlike traditional news portals filled with random headlines, Insight gives users full control by letting them curate feeds based on topics (AI, Technology, Startups, etc.) and regions (India, USA, UK, etc.).",
+      title: "Insight News Aggregator",
+      description: "A full-stack news briefing platform designed to provide users with a personalized, curated content experience. The system utilizes a Redis caching layer to significantly minimize data fetch latency and enhance user experience.",
       period: "11.2025–Present",
+      github: "https://github.com/nikhilr-r/insight-aggregator",
       link: "https://github.com/nikhilr-r/insight-aggregator",
-      tags: ["MERN", "System Design", "Redis", "AI"]
+      tags: ["React", "Node.js", "Redis", "API Integration", "Full-Stack Development"]
+    },
+    {
+      title: "Farmiq",
+      description: "An agricultural technology solution designed to support farmers in Maharashtra. The platform aggregates and delivers critical information, including real-time weather updates, fertilizer recommendations, and relevant government scheme data, to empower data-driven farming decisions.",
+      period: "09.2025–10.2025",
+      github: "https://github.com/nikhilr-r/Farmiq",
+      link: "https://farmiq-nikr.vercel.app",
+      tags: ["Web Development", "Data Aggregation", "AgriTech", "Vercel Deployment"]
+    },
+    {
+      title: "Offline-First Voice Assistant (Banking Kiosk)",
+      description: "An AI-powered banking kiosk architectural prototype that prioritizes data privacy and accessibility. By leveraging local Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG), the system operates entirely offline, eliminating dependency on internet connectivity or external API keys.",
+      period: "10.2025–11.2025",
+      github: "https://github.com/nikhilr-r/brainBack_hack",
+      link: "https://github.com/nikhilr-r/brainBack_hack",
+      tags: ["Artificial Intelligence", "LLM", "RAG", "Privacy-First Architecture", "Embedded Systems"]
     },
     {
       title: "AI Resume Analyzer",
       description: "AI Resume Analyzer is a web app I built using React, TypeScript, Tailwind CSS, Puter.js, and Zustand.  It allows users to upload resumes, securely store them, and instantly receive AI-powered ATS scores and feedback tailored to job descriptions.   I developed this project to explore AI in recruitment systems and practice modern web technologies like serverless auth, file storage, and client-side AI evaluation.",
       period: "06.2025–08.2025",
+      github: "https://github.com/nikhilr-r/ai-resume-analyze",
       link: "https://github.com/nikhilr-r/ai-resume-analyze",
       tags: ["React", "Puter.js", "Zustand"]
     },
@@ -63,15 +81,9 @@ export const PORTFOLIO_DATA = {
       title: "RSA Encryption System",
       description: "A web-based RSA encryption tool built with Spring Boot and modern web technologies.",
       period: "07.2025–08.2025",
+      github: "https://github.com/nikhilr-r/RSA-Cryptography-Tool",
       link: "https://github.com/nikhilr-r/RSA-Cryptography-Tool",
       tags: ["Cryptography", "SpringBoot", "Security"]
-    },
-    {
-      title: "Neural Network Research",
-      description: "Analysis of activation functions and overfitting in Deep Learning models.",
-      period: "06.2024–08.2024",
-      link: "https://github.com/nikhilr-r",
-      tags: ["AI", "Research", "Python"]
     }
   ],
 

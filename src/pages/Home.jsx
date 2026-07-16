@@ -7,7 +7,7 @@ import Hero from "../components/layout/Hero";
 import TechStack from "../components/layout/TechStack"; 
 import About from "../components/layout/About";
 import Education from "../components/layout/Education";
-import { ArrowRight, ExternalLink, ChevronDown } from "lucide-react";
+import { ArrowRight, ExternalLink, ChevronDown, Github } from "lucide-react";
 import SectionDivider from "../components/ui/SectionDivider";
 
 
@@ -40,15 +40,30 @@ const ProjectItem = ({ project }) => {
             </div>
 
             <div className="flex items-center gap-2 shrink-0">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="p-1.5 text-zinc-600 hover:text-zinc-400 transition-colors"
-              >
-                <ExternalLink size={14} />
-              </a>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="p-1.5 text-zinc-600 hover:text-zinc-400 transition-colors"
+                  title="GitHub Repository"
+                >
+                  <Github size={14} />
+                </a>
+              )}
+              {project.link && project.link !== project.github && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="p-1.5 text-zinc-600 hover:text-zinc-400 transition-colors"
+                  title={project.github ? "Live Demo" : "Project Link"}
+                >
+                  <ExternalLink size={14} />
+                </a>
+              )}
               <motion.div
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.2 }}
