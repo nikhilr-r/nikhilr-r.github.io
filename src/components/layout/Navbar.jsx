@@ -48,6 +48,7 @@ const PixelLogo = () => (
 const NAV_ITEMS = [
   { id: "home", label: "Portfolio" },
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
 ];
 

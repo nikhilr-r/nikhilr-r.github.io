@@ -7,23 +7,24 @@ import {
   Layers,
   FolderGit2,
   GraduationCap,
-  Mail
+  Mail,
+  Briefcase
 } from "lucide-react";
 
 const COMMANDS = [
   { label: "Portfolio", id: "home", icon: Home, shortcut: "H" },
   { label: "About", id: "about", icon: User, shortcut: "A" },
+  { label: "Experience", id: "experience", icon: Briefcase, shortcut: "W" },
   { label: "Tech Stack", id: "tech", icon: Layers, shortcut: "T" },
   { label: "Projects", id: "projects", icon: FolderGit2, shortcut: "P" },
   { label: "Education", id: "education", icon: GraduationCap, shortcut: "E" },
-  { label: "Contact", id: "footer", icon: Mail, shortcut: "C" } , 
+  { label: "Contact", id: "footer", icon: Mail, shortcut: "C" },
   {
     label: "Resume",
     id: "resume",
     shortcut: "R",
     icon: "📄"
   }
-  
 ];
 
 export default function CommandPalette({ open, onClose }) {

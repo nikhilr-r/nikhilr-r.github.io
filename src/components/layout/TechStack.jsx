@@ -13,7 +13,16 @@ import {
   SiAndroid,
   SiPhp,
   SiHtml5,
-  SiCss3
+  SiCss3,
+  SiTypescript,
+  SiPostgresql,
+  SiPrisma,
+  SiDocker,
+  SiExpress,
+  SiElectron,
+  SiSqlite,
+  SiPython,
+  SiPytorch
 } from "react-icons/si";
 
 import { FaJava, FaDatabase } from "react-icons/fa";
@@ -62,14 +71,23 @@ export default function TechStack() {
   const techStack = PORTFOLIO_DATA?.techStack ?? [];
 
   const techIcons = {
-    "C": { Icon: SiC, color: "#A8B9CC" },
-    "C++": { Icon: SiCplusplus, color: "#00599C" },
+    "Python": { Icon: SiPython, color: "#3776AB" },
+    "PyTorch": { Icon: SiPytorch, color: "#EE4C2C" },
+    "TypeScript": { Icon: SiTypescript, color: "#3178C6" },
+    "Node.js": { Icon: SiNodedotjs, color: "#339933" },
+    "Express.js": { Icon: SiExpress, color: "#FFFFFF" },
+    "PostgreSQL": { Icon: SiPostgresql, color: "#4169E1" },
+    "Prisma": { Icon: SiPrisma, color: "#5A67D8" },
+    "Docker": { Icon: SiDocker, color: "#2496ED" },
+    "React": { Icon: SiReact, color: "#61DAFB" },
+    "Electron": { Icon: SiElectron, color: "#9FEAF9" },
+    "SQLite": { Icon: SiSqlite, color: "#003B57" },
     "Java": { Icon: FaJava, color: "#ED8B00" },
+    "C++": { Icon: SiCplusplus, color: "#00599C" },
+    "C": { Icon: SiC, color: "#A8B9CC" },
     "SQL": { Icon: SiMysql, color: "#4479A1" },
     "Database": { Icon: FaDatabase, color: "#6B7280" },
     "MongoDB": { Icon: SiMongodb, color: "#47A248" },
-    "Node.js": { Icon: SiNodedotjs, color: "#339933" },
-    "React": { Icon: SiReact, color: "#61DAFB" },
     "Android": { Icon: SiAndroid, color: "#3DDC84" },
     "PHP": { Icon: SiPhp, color: "#777BB4" },
     "HTML": { Icon: SiHtml5, color: "#E34F26" },

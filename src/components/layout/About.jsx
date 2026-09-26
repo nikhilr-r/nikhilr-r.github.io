@@ -18,13 +18,16 @@ const AboutItem = ({ children, index }) => (
 export default function About() {
   const aboutItems = [
     <>
-      I’m a Final Year <span className="text-zinc-200 font-medium">CSE (AI) student</span> with a strong foundation in <span className="text-zinc-200 font-medium">Data Structures, Algorithms, and OOP</span>. I focus on building reliable, scalable software systems.
+      I’m a Computer Science & Engineering student specializing in <span className="text-zinc-200 font-medium">Artificial Intelligence</span> with a solid foundation in <span className="text-zinc-200 font-medium">Data Structures, Algorithms, and System Design</span>. I focus on engineering reliable, production-ready software systems that solve real-world problems.
     </>,
     <>
-      With hands-on experience in <span className="text-zinc-200 font-medium">Full-Stack (MERN)</span> and <span className="text-zinc-200 font-medium">Spring Boot</span>, I enjoy designing APIs and connecting backend services with clean interfaces. My passion lies in <span className="text-zinc-200 font-medium">backend architecture</span> and building production-ready code.
+      On the backend and systems side, I have production experience building with <span className="text-zinc-200 font-medium">TypeScript, Node.js, MERN Stack</span>, <span className="text-zinc-200 font-medium">Prisma ORM</span>, and <span className="text-zinc-200 font-medium">PostgreSQL / SQLite</span>. I enjoy architecting resilient relational schemas, optimizing REST APIs, and designing ACID-compliant transaction workflows for commercial retail and wholesale enterprises.
     </>,
     <>
-      Currently seeking <span className="text-zinc-200 font-medium">SDE Internship opportunities</span> to apply my problem-solving skills in a fast-paced engineering environment.
+      In <span className="text-zinc-200 font-medium">Applied AI & Intelligent Systems</span>, I actively work across the modern AI ecosystem—architecting offline-first <span className="text-zinc-200 font-medium">Retrieval-Augmented Generation (RAG)</span> with <span className="text-zinc-200 font-medium">ChromaDB</span>, deploying <span className="text-zinc-200 font-medium">Local LLMs (Ollama)</span> and <span className="text-zinc-200 font-medium">Whisper STT</span> on edge hardware, implementing <span className="text-zinc-200 font-medium">PyTorch</span> computer vision models for automated disease diagnosis, and integrating <span className="text-zinc-200 font-medium">Gemini API</span> pipelines.
+    </>,
+    <>
+      Currently seeking <span className="text-zinc-200 font-medium">Software Development Engineer (SDE) & AI Engineering opportunities</span> to apply my problem-solving skills in high-impact engineering environments.
     </>
   ];
 

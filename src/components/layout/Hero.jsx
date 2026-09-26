@@ -7,7 +7,9 @@ import {
   Terminal,
   Cpu,
   Globe,
-  FileText
+  FileText,
+  Copy,
+  Check
 } from "lucide-react";
 
 import { PORTFOLIO_DATA } from "../../data/portfolio";
@@ -17,6 +19,14 @@ import "./Hero.css";
 export default function Hero() {
   const [time, setTime] = useState("");
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("rajputnikhil1906@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   // Live Clock
   useEffect(() => {
@@ -37,16 +47,33 @@ export default function Hero() {
 
   useEffect(() => {
     const handleKey = (e) => {
-      if (e.key.toLowerCase() === "r") {
+      // Don't trigger if user is typing in an input, textarea, or contentEditable element
+      if (
+        e.target.tagName === "INPUT" ||
+        e.target.tagName === "TEXTAREA" ||
+        e.target.isContentEditable
+      ) {
+        return;
+      }
+
+      if (e.key.toLowerCase() === "r" && !e.ctrlKey && !e.metaKey && !e.altKey) {
         setResumeOpen(true);
       }
       if (e.key === "Escape") {
         setResumeOpen(false);
       }
     };
-  
+
+    const handleOpenResume = () => setResumeOpen(true);
+
+    window.addEventListener("open-resume", handleOpenResume);
+    document.addEventListener("open-resume", handleOpenResume);
     window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
+    return () => {
+      window.removeEventListener("open-resume", handleOpenResume);
+      document.removeEventListener("open-resume", handleOpenResume);
+      window.removeEventListener("keydown", handleKey);
+    };
   }, []);
 
   return (
@@ -137,14 +164,22 @@ export default function Hero() {
                 </span>
               </div>
 
-              <div className="flex gap-3 text-sm text-zinc-400">
-                <Mail size={14} className="text-zinc-600" />
-                <a
-                  href="mailto:rajputnikhil1906@gmail.com"
-                  className="hover:text-white transition-colors"
+              <div className="flex items-center gap-3 text-sm text-zinc-400">
+                <Mail size={14} className="text-zinc-600 shrink-0" />
+                <button
+                  onClick={handleCopyEmail}
+                  className="group/mail flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer text-left"
+                  title="Click to copy email address"
                 >
-                  rajputnikhil1906@gmail.com
-                </a>
+                  <span className="underline underline-offset-4">rajputnikhil1906@gmail.com</span>
+                  {copied ? (
+                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/30 flex items-center gap-1">
+                      <Check size={10} /> Copied!
+                    </span>
+                  ) : (
+                    <Copy size={12} className="text-zinc-600 group-hover/mail:text-zinc-300 transition-colors" />
+                  )}
+                </button>
               </div>
 
               <div className="flex gap-3 text-sm text-zinc-400">
